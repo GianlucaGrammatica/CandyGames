@@ -41,3 +41,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/********************************************************************/
+
+@font-face {
+    font-family: CuteCat;
+    src: url(./Assets/CuteCat.ttf);
+}
+
+* {
+    font-family: 'CuteCat';
+}

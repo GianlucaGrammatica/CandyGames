@@ -6,6 +6,27 @@
     <title>Emily Games</title>
 </head>
 <body>
-    
+    <div style="padding: 20px;">
+        <h1>Games</h1>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Genere</th>
+                <th>Anno</th>
+                <th>Short Description</th>
+                <th>Description</th>
+            </tr>
+
+            <% games.forEach((game) => { %>
+                <tr>
+                    <td><%= game.titolo %></td>
+                    <td><%= game.genere %></td>
+                    <td><%= game.anno_uscita %></td>
+                    <td><%= game.short_desc %></td>
+                    <td><%= game.descrizione %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
 </body>
 </html>
