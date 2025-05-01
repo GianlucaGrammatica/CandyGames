@@ -1,0 +1,250 @@
+/* Home Welcome Section */
+.HomeWelcome {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 20px;
+}
+
+.WelcomeLogo {
+    width: 70%;
+}
+/*********************************************/
+
+
+/* Random Game Section */
+.RandomGameCon {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.SectionTitle {
+    font-size: 2em;
+}
+
+.FeaturedGame {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.FeaturedGameInfosCon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FeaturedGameInfos {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    line-height: 1.4;
+}
+
+.FeaturedGameInfos h2 {
+    font-size: 2.5em;
+}
+
+.FeaturedGameInfos h3 {
+    font-size: 1.5em;
+}
+
+.FeaturedBannerImg {
+    width: 40%;
+    border-radius: 30px;
+    border: 3px solid #E6D9A2;
+    box-shadow: 0 0 0 5px #382c4e;
+    margin-right: 10px;
+}
+
+.FeaturedGameInfosGeneraAndRating {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+/* Genre and Rating Styles (Featured Game) */
+.Genre,
+.Rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.GenreIcon,
+.RatingIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.GenreText,
+.RatingText {
+    font-size: 1.2em;
+    color: #463761;
+}
+
+/* Media Query for Random Game Section */
+@media (max-width: 499px) {
+    .RandomGameCon {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .FeaturedGame {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .FeaturedBannerImg {
+        width: 85%;
+        border-radius: 30px;
+        border: 3px solid #E6D9A2;
+        box-shadow: 0 0 0 5px #382c4e;
+        margin-bottom: 5px;
+    }
+
+    .FeaturedGameInfosCon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .FeaturedGameInfos {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .FeaturedGameInfos h2 {
+        font-size: 2em;
+    }
+
+    .FeaturedGameInfos h3 {
+        font-size: 1.3em;
+    }
+}
+/*********************************************/
+
+
+/* Top 3 Leaderboard Section */
+.LeaderboardCon {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.LeaderboardList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.LeaderboardItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 500px;
+    gap: 10px;
+    border: 5px solid #E6D9A2;
+    box-shadow: 0 0 0 5px #382c4e;
+}
+
+.LeaderboardItem.first {
+    background-color: #e5b57d;
+    background-image: linear-gradient(to right, #d16ba5, #df7399, #e87f8f, #ec8c88, #ed9a85, #eba77e, #e5b57d, #dbc381, #c5d48b, #a9e3a3, #86f0c7, #5ffbf1);
+}
+
+.LeaderboardItem.second {
+    background-color: #f7aed2;
+    background-image: linear-gradient(to right, #f6a6ce, #f7aed2, #f8b6d7, #f8bedb, #f9c6df);
+}
+
+.LeaderboardItem.third {
+    background-color: #9ae0f7;
+    background-image: linear-gradient(to right, #81d9f5, #9ae0f7, #b1e8fa, #c6effc, #dbf6ff);
+}
+
+.LeaderboardLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.LeaderboardRankIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.LeaderboardImg {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.LeaderboardName {
+    font-size: 1.5rem;
+}
+
+/* Rating Style (Leaderboard) */
+.RatingLeaderbord {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.RatingIconLeaderbord {
+    width: 20px;
+    height: 20px;
+}
+
+.RatingTextLeaderbord {
+    font-size: 1rem;
+}
+
+/* Media Query for Leaderboard Section */
+@media (max-width: 499px) {
+    .LeaderboardItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: inherit;
+        width: 80%;
+        max-width: 500px;
+        gap: 10px;
+        border: 5px solid #E6D9A2;
+        box-shadow: 0 0 0 5px #382c4e;
+    }
+
+    .RatingLeaderbord {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .RatingLeaderbord img {
+        display: none;
+    }
+}
+/*********************************************/

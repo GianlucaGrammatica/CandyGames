@@ -1,16 +1,84 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -18,25 +86,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -44,11 +131,252 @@ table {
 
 /********************************************************************/
 
+/* Font Faces */
 @font-face {
-    font-family: CuteCat;
-    src: url(./Assets/CuteCat.ttf);
+    font-family: 'Quicksand';
+    src: url('/Assets/Quicksand.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Candy Beans';
+    src: url('/Assets/Candy Beans.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
 * {
-    font-family: 'CuteCat';
+    transition: color 0.3s ease;
+}
+
+body {
+    font-family: "Quicksand";
+    background-image: linear-gradient(to right, #e6d9a2, #eebf93, #f0a592, #e58f9c, #cb80ab);
+    background-color: #f0a592;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Selection Styles */
+::-moz-selection {
+    /* Code for Firefox */
+    color: #1f060b;
+    background-color: #cb849586;
+}
+
+::selection {
+    color: #1f060b;
+    background-color: #cb849586;
+}
+/*********************************************/
+
+
+/* Typography */
+.CandyFont {
+    font-family: 'Candy Beans', sans-serif;
+}
+/*********************************************/
+
+
+/* Navigation Bar */
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    position: relative;
+}
+
+.NavBar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 3px;
+    background-color: #463761;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.Logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.LogoImg {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.NavLinks {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.NavLinks a {
+    font-size: 1.25rem;
+}
+
+.NavLinks a:hover {
+    color: #624e88;
+}
+
+.NormalLink {
+    text-decoration: none;
+    color: #463761;
+}
+
+.ActiveLink {
+    text-decoration: none;
+    color: #8967b3;
+}
+
+/* Hamburger Button */
+.HamburgerButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.HamburgerLine {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #463761;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Media Query for Mobile Navigation */
+@media (max-width: 499px) {
+    .WelcomeLogo {
+        width: 100%;
+    }
+
+    .NavLinks {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background-image: linear-gradient(to right, #e6d9a2, #eebf93, #f0a592, #e58f9c, #cb80ab);
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+        box-shadow: 0 4px 6px #46376117;
+    }
+
+    .NavLinks.is-open {
+        display: flex;
+    }
+
+    .HamburgerButton {
+        display: block;
+    }
+
+    .HamburgerButton.is-active .HamburgerLine:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .HamburgerButton.is-active .HamburgerLine:nth-child(2) {
+        opacity: 0;
+    }
+
+    .HamburgerButton.is-active .HamburgerLine:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+/*********************************************/
+
+
+/* Body Content */
+.BodyCenteredContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Section {
+    margin: 30px 0;
+}
+
+.SectionTitle {
+    font-size: 2em;
+}
+/*********************************************/
+
+
+/* Motivational Footer */
+.MotivationalFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.MotivationalFooter p {
+    margin-bottom: 10px;
+    font-size: clamp(0.7rem, 2vw, 1.1rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90vw;
+}
+/*********************************************/
+
+
+/* Button Styles */
+.Button_Dark1 {
+    background-color: #624e88;
+    border: 5px solid #463761;
+    /* Bordo più scuro */
+    color: #f0a592;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.1em;
+    padding: 12px 24px;
+    border-radius: 50px;
+    /* Bordo più tondo, forma a pillola */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Button_Dark1:hover {
+    background-color: #57437b;
+    transform: scale(1.05);
+}
+
+.Button_Dark1:active {
+    background-color: rgb(103, 81, 144);
+    transform: scale(0.9);
+}
+
+.Button_Dark1:focus {
+    outline: none;
+}
+/*********************************************/
+
+
+/* Text Colors */
+.TextColor_Dark1 {
+    color: #463761;
+}
+
+.TextColor_Dark2 {
+    color: #624e88;
+}
+
+.TextColor_Dark3 {
+    color: #282039;
 }

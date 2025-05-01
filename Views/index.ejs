@@ -1,32 +1,126 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<%= locals.baseUrl %>css/style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="shortcut icon" href="/Assets/Icon.ico" type="image/x-icon">
+    <link rel="icon" size="512x512" href="/Assets/Icon.png">
     <title>Emily Games</title>
 </head>
-<body>
-    <div style="padding: 20px;">
-        <h1>Games</h1>
-        <table>
-            <tr>
-                <th>Nome</th>
-                <th>Genere</th>
-                <th>Anno</th>
-                <th>Short Description</th>
-                <th>Description</th>
-            </tr>
 
-            <% games.forEach((game) => { %>
-                <tr>
-                    <td><%= game.titolo %></td>
-                    <td><%= game.genere %></td>
-                    <td><%= game.anno_uscita %></td>
-                    <td><%= game.short_desc %></td>
-                    <td><%= game.descrizione %></td>
-                </tr>
-            <% }) %>
-        </table>
+<body>
+
+    <nav class="NavBar">
+        <div class="Logo">
+            <img src="/Assets/Logo.png" alt="Candy Games Logo" class="LogoImg" />
+        </div>
+
+        <button class="HamburgerButton" id="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+            <span class="HamburgerLine"></span>
+            <span class="HamburgerLine"></span>
+            <span class="HamburgerLine"></span>
+        </button>
+
+        <ul class="NavLinks" id="nav-links">
+            <li><a href="#" class="ActiveLink">Home</a></li>
+            <li><a href="#" class="NormalLink">About</a></li>
+            <li><a href="#" class="NormalLink">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="BodyCenteredContent">
+
+        <div class="HomeWelcome">
+            <img src="/Assets/WelcomeLogo.png" alt="Candy Games Welcome Logo" class="WelcomeLogo" />
+        </div>
+
+        <div class="RandomGameCon">
+            <h1 class="TextColor_Dark3 SectionTitle">✦ Featured Game ✦</h1>
+            <div class="FeaturedGame Section">
+
+                <div class="FeaturedGameInfosCon">
+                    <!-- Immagine del gioco usando l'ID -->
+                    <img class="FeaturedBannerImg" src="/Assets/GamesImages/Banners/<%= game.id %>.png"
+                        alt="Featured Image">
+
+                    <div class="FeaturedGameInfos TextColor_Dark3">
+                        <h2>
+                            <%= game.titolo %>
+                        </h2>
+                        <h3>
+                            <%= game.short_desc %>
+                        </h3>
+
+                        <div class="FeaturedGameInfosGeneraAndRating">
+                            <!-- Icona e nome del genere -->
+                            <div class="Genre">
+                                <img class="GenreIcon" src="/Assets/GeneraIcons/<%= game.genere %>.png"
+                                    alt="<%= game.genere %> Icon">
+                                <span class="GenreText">
+                                    <%= game.genere %>
+                                </span>
+                            </div>
+
+                            <!-- Rating con stella -->
+                            <div class="Rating">
+                                <img class="RatingIcon" src="/Assets/StarFull.png" alt="Rating Star">
+                                <span class="RatingText">
+                                    <%= game.rating %> / 5.0
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Bottone Learn More -->
+                <input type="button" value="Learn More" class="Button_Dark1">
+            </div>
+        </div>
+
+        <div class="LeaderboardCon Section">
+            <h2 class="TextColor_Dark3 SectionTitle">✦ Top 3 Games ✦</h2>
+
+            <div class="LeaderboardList">
+                <% top3.forEach((game, index)=> { %>
+                    <a href="/game/<%= game.id %>"
+                        class="LeaderboardItem <%= index === 0 ? 'first' : index === 1 ? 'second' : 'third' %>">
+                        <div class="LeaderboardLeft">
+                            <img src="/Assets/Leaderborad_<%= index === 0 ? 'Gold' : index === 1 ? 'Silver' : 'Bronze' %>.png"
+                                alt="<%= index === 0 ? 'Gold' : index === 1 ? 'Silver' : 'Bronze' %> Icon"
+                                class="LeaderboardRankIcon" />
+                            <img src="/Assets/GamesImages/Icons/<%= game.id %>.png" alt="<%= game.titolo %>"
+                                class="LeaderboardImg" />
+                            <h1 class="LeaderboardName TextColor_Dark3">
+                                <%= game.titolo %>
+                            </h1>
+                        </div>
+                        <div class="RatingLeaderbord">
+                            <img class="RatingIconLeaderbord" src="/Assets/StarFull.png" alt="Rating Star">
+                            <span class="RatingTextLeaderbord TextColor_Dark3">
+                                <%= game.rating %> / 5.0
+                            </span>
+                        </div>
+                    </a>
+                    <% }) %>
+            </div>
+        </div>
+
     </div>
+
+
+    </div>
+
+
+    <footer class="MotivationalFooter TextColor_Dark3">
+        <p id="quote-text">🌟 Stay sweet, keep going. 🍬</p>
+        <p>✦ Candy Games || contact@abcia2.com ✦</p>
+    </footer>
+
+
+    <script src="/script.js"></script>
 </body>
+
 </html>
