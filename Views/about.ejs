@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="shortcut icon" href="/Assets/Icon.ico" type="image/x-icon">
+    <link rel="icon" size="512x512" href="/Assets/Icon.png">
+    <title>Candy Games</title>
+</head>
+
+<body>
+
+    <nav class="NavBar">
+        <div class="Logo">
+            <a href="<%= locals.baseUrl %>">
+                <img src="/Assets/Logo.png" alt="Candy Games Logo" class="LogoImg" />
+            </a>
+        </div>
+
+        <button class="HamburgerButton" id="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+            <span class="HamburgerLine"></span>
+            <span class="HamburgerLine"></span>
+            <span class="HamburgerLine"></span>
+        </button>
+
+        <ul class="NavLinks" id="nav-links">
+            <li><a class="NormalLink" href="<%= locals.baseUrl %>">Home</a></li>
+            <li><a class="ActiveLink" href="<%= locals.baseUrl %>about">About</a></li>
+            <li><a class="NormalLink" href="<%= locals.baseUrl %>login">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="BodyCenteredContent">
+        
+        <div class="Section">
+            <h1 class="TextColor_Dark3 SectionTitle">✦ About This Site ✦</h1>
+            <p class="TextColor_Dark3 AboutText">
+              Welcome to our indie game library 🍓<br><br>
+              A cozy little space where creativity meets code. This website was made to collect and share unique games made by small teams, solo devs, and passionate weirdos like us.<br><br>
+              Every game here has its own soul, story, and aesthetic. Whether you're into pixel art, narrative adventures, or soft nostalgia vibes, there's definitely something for you.
+            </p>
+          </div>
+          
+          <div class="Section">
+            <h1 class="TextColor_Dark3 SectionTitle">✦ How It Works ✦</h1>
+            <p class="TextColor_Dark3 AboutText">
+              All the games on this site are part of a growing digital collection.<br><br>
+              You can explore by genre, rating, or just let luck choose with the random game button 🎲<br><br>
+              Each title comes with a short desc and cute cover art so it's easy to find hidden gems. This is a chill space where players and creators can vibe together.
+            </p>
+          </div>
+          
+          <div class="Section">
+            <h1 class="TextColor_Dark3 SectionTitle">✦ Sweet Candy Aesthetic ✦</h1>
+            <p class="TextColor_Dark3 AboutText">
+              The whole site is inspired by candy colors and sugary moods 🍬<br><br>
+              Everything’s soft, dreamy, and made to feel like you're scrolling through a digital candy shop.<br><br>
+              Pastel tones, squishy UI elements, and sparkly vibes everywhere. It's meant to feel fun, sweet, and a little magical.
+            </p>
+          </div>
+          
+          <div class="Section">
+            <h1 class="TextColor_Dark3 SectionTitle">✦ About the Creator ✦</h1>
+            <p class="TextColor_Dark3 AboutText">
+              Hi! I’m <strong>Abcia2</strong> 🫶🏻<br><br>
+              A solo dev who loves storytelling, animation, and those dreamy liminal spaces where reality blurs with imagination.<br><br>
+              I’m the creator behind games like <em>Gacha Story</em> and <em>Hoops Runs</em>, with a focus on emotional journeys, aesthetic freedom, and characters that stick with you.<br><br>
+              When I’m not coding, I’m probably editing videos or turning little thoughts into little games 🎮💫
+            </p>
+          </div>
+          
+          <div class="Section">
+            <h1 class="TextColor_Dark3 SectionTitle">✦ Why This Project Exists ✦</h1>
+            <p class="TextColor_Dark3 AboutText">
+              This space was made to gather all my projects in one cozy digital corner.<br><br>
+              But it’s also here for anyone who wants to explore something cute, nostalgic, or just a little different.<br><br>
+              It’ll keep growing, just like the games inside it ✨
+            </p>
+          </div>
+          
+          
+    </div>
+
+
+    <footer class="MotivationalFooter TextColor_Dark3">
+        <p id="quote-text">🌟 Stay sweet, keep going. 🍬</p>
+        <p>✦ Candy Games || contact@abcia2.com ✦</p>
+    </footer>
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

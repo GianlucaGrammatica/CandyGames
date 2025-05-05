@@ -160,12 +160,12 @@ body {
 /* Selection Styles */
 ::-moz-selection {
     /* Code for Firefox */
-    color: #1f060b;
+    color: #18061f;
     background-color: #cb849586;
 }
 
 ::selection {
-    color: #1f060b;
+    color: #18061f;
     background-color: #cb849586;
 }
 /*********************************************/
@@ -365,8 +365,42 @@ body {
 .Button_Dark1:focus {
     outline: none;
 }
+
+.Button_Ligth1 {
+    background-color: #CB80AB;
+    border: 5px solid #783159;
+    color: #491b35;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Button_Ligth1:hover {
+    background-color: #a54f80;
+    transform: scale(1.05);
+}
+
+.Button_Ligth1:active {
+    background-color: #eb9cc9;
+    transform: scale(0.9);
+}
+
+.Button_Ligth1:focus {
+    outline: none;
+}
 /*********************************************/
 
+
+.Link_Pink {
+    color: #CB80AB;
+}
+
+.Link_Pink:hover {
+    color: #e29dc4;
+}
 
 /* Text Colors */
 .TextColor_Dark1 {

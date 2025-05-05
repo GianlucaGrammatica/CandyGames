@@ -14,7 +14,9 @@
 
     <nav class="NavBar">
         <div class="Logo">
-            <img src="/Assets/Logo.png" alt="Candy Games Logo" class="LogoImg" />
+            <a href="<%= locals.baseUrl %>">
+                <img src="/Assets/Logo.png" alt="Candy Games Logo" class="LogoImg" />
+            </a>
         </div>
 
         <button class="HamburgerButton" id="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
@@ -24,9 +26,9 @@
         </button>
 
         <ul class="NavLinks" id="nav-links">
-            <li><a href="#" class="ActiveLink">Home</a></li>
-            <li><a href="#" class="NormalLink">About</a></li>
-            <li><a href="#" class="NormalLink">Login</a></li>
+            <li><a class="ActiveLink" href="<%= locals.baseUrl %>">Home</a></li>
+            <li><a class="NormalLink" href="<%= locals.baseUrl %>about">About</a></li>
+            <li><a class="NormalLink" href="<%= locals.baseUrl %>login">Login</a></li>
         </ul>
     </nav>
 
@@ -37,7 +39,7 @@
         </div>
 
         <div class="RandomGameCon">
-            <h1 class="TextColor_Dark3 SectionTitle">✦ Featured Game ✦</h1>
+            <h2 class="TextColor_Dark3 SectionTitle">✦ Featured Game ✦</h2>
             <div class="FeaturedGame Section">
 
                 <div class="FeaturedGameInfosCon">
@@ -75,8 +77,9 @@
                     </div>
                 </div>
 
-                <!-- Bottone Learn More -->
-                <input type="button" value="Learn More" class="Button_Dark1">
+                <input type="button" value="Learn More" class="Button_Dark1"
+                    onclick="location.href='/game/<%= game.id %>'">
+
             </div>
         </div>
 

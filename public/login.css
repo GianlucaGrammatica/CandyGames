@@ -1,0 +1,107 @@
+.LoginFormCon {
+    background-image: linear-gradient(to bottom, #f3e5ac, #f5e9b2, #f8ecb9, #faf0bf, #fdf3c6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+}
+
+.LoginMascotImg {
+    width: 20%;
+}
+
+.LoginTitle {
+    margin-bottom: 10px;
+}
+
+.InputRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+
+.LoginForm button {
+    margin-top: 10px;
+}
+
+.LoginRedirect {
+    margin-top: 20px;
+}
+
+.LoginInput {
+    background-color: #CB80AB;
+    border: 5px solid #783159;
+    color: #491b35;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em;
+    padding: 4px 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none;
+}
+
+.LoginInput:focus {
+    border-color: #a84d7b;
+    background-color: #e398c3;
+    box-shadow: 0 0 0 2px #f0c9e3;
+}
+
+.InputLabelIcon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.InputIcon {
+    width: 25px;
+    height: 25px;
+}
+
+@media (max-width: 499px) {
+    .LoginFormCon {
+        background-image: linear-gradient(to bottom, #f3e5ac, #f5e9b2, #f8ecb9, #faf0bf, #fdf3c6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 15px;
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+
+    .LoginForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .InputRow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 350px;
+        margin: 10px 0;
+        justify-content: space-between;
+    }
+
+    .LoginInput {
+        padding: 4px 10px;
+        margin-top: 5px;
+    }
+}

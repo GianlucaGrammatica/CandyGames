@@ -9,22 +9,19 @@ function getAbsoluteUrl(uri) {
   return 'http://' + ipAddress + ':' + portNumber + '/' + uri;
 }
 
-// nuova app EXPRESS
 const app = express();
-
 app.locals.baseUrl = getAbsoluteUrl('');
 
-// Configura la directory per i file statici (css, js)
-app.use(express.static('public'))
+// Static files
+app.use(express.static('public'));
 
-// Middleware che automaticamente effettua il parsing dei parametri
-// inviati via HTTP dal form e crea un oggetto JS che li contiene
+// Body parser
 app.use(express.urlencoded({ extended: true }));
 
-// ejs è il Template Engine che consente di fondere HTML e JS server side
+// Template engine
 app.set('view engine', 'ejs');
 
-// Configura connessione al DB MySQL
+// Connessione MySQL
 const db = mysql.createConnection({
   host: '127.0.0.1',
   user: 'root',
@@ -41,17 +38,16 @@ db.connect((err) => {
   console.log('Connesso al database MySQL!');
 });
 
-// Route: GET /index
+
+// Home
 app.get(['/', '/home', '/index'], (req, res) => {
-
   const randomGameQuery = 'SELECT * FROM giochi ORDER BY RAND() LIMIT 1';
-
   const top3Query = 'SELECT * FROM giochi ORDER BY rating DESC LIMIT 3';
 
-  // Esegui entrambe le query
   db.query(randomGameQuery, (err, randomResults) => {
+
     if (err) {
-      res.status(500).send('Errore durante la query del gioco casuale.');
+      res.status(500).send('Errore nella query del gioco casuale.');
       return;
     }
 
@@ -59,11 +55,10 @@ app.get(['/', '/home', '/index'], (req, res) => {
 
     db.query(top3Query, (err, top3Results) => {
       if (err) {
-        res.status(500).send('Errore durante la query della top 3.');
+        res.status(500).send('Errore nella query della top 3.');
         return;
       }
 
-      // Passa sia il gioco casuale che la top 3 all'index.ejs
       res.render('index', {
         game: randomGame,
         top3: top3Results
@@ -73,8 +68,38 @@ app.get(['/', '/home', '/index'], (req, res) => {
 });
 
 
+// Route GET /game/:id
+app.get('/game/:id', (req, res) => {
+  const gameId = parseInt(req.params.id);
+  const sql = 'SELECT * FROM giochi WHERE id = ?';
 
-// Avvio Web Server nella porta 3000 e IP 127.0.0.1
-app.listen(portNumber, ipAddress, () => {
-    console.log('Server avviato su http://' + ipAddress + ':' + portNumber);
+  db.query(sql, [gameId], (err, results) => {
+    if (err || results.length === 0) {
+      res.status(404).render('404');
+      return;
+    }
+
+    const foundGame = results[0];
+
+    res.render('game', { game: foundGame });
   });
+});
+
+
+
+
+// About GET
+app.get('/about', (req, res) => {
+  res.render('about', { error: null });
+});
+
+// Login GET
+app.get('/login', (req, res) => {
+  res.render('login', { error: null });
+});
+
+
+// Avvia il server
+app.listen(portNumber, ipAddress, () => {
+  console.log(`Server avviato su http://${ipAddress}:${portNumber}`);
+});

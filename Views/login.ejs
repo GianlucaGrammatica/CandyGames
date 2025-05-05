@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/login.css">
+    <link rel="shortcut icon" href="/Assets/Icon.ico" type="image/x-icon">
+    <link rel="icon" size="512x512" href="/Assets/Icon.png">
+    <title>Sing Up - Candy Games</title>
+</head>
+
+<body>
+
+    <nav class="NavBar">
+        <div class="Logo">
+            <a href="<%= locals.baseUrl %>">
+                <img src="/Assets/Logo.png" alt="Candy Games Logo" class="LogoImg" />
+            </a>
+        </div>
+
+        <button class="HamburgerButton" id="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+            <span class="HamburgerLine"></span>
+            <span class="HamburgerLine"></span>
+            <span class="HamburgerLine"></span>
+        </button>
+
+        <ul class="NavLinks" id="nav-links">
+            <li><a class="NormalLink" href="<%= locals.baseUrl %>">Home</a></li>
+            <li><a href="#" class="NormalLink">About</a></li>
+            <li><a href="#" class="ActiveLink">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="BodyCenteredContent">
+        <div class="LoginFormCon">
+            <img src="/Assets/CandyBunny_1.png" alt="Mascot" class="LoginMascotImg">
+
+            <form class="LoginForm" action="/login" method="POST">
+                <h1 class="TextColor_Dark3 SectionTitle LoginTitle">✦ Login ✦</h1>
+
+                <div class="InputRow">
+                    <div class="InputLabelIcon">
+                        <img src="/Assets/EmailIcon.png" alt="Email Icon" class="InputIcon">
+                        <label for="email" class="LoginLabel">Email</label>
+                    </div>
+                    <input type="email" id="email" name="email" class="LoginInput" required>
+                </div>
+                
+                <div class="InputRow">
+                    <div class="InputLabelIcon">
+                        <img src="/Assets/PasswordIcon.png" alt="Password Icon" class="InputIcon">
+                        <label for="password" class="LoginLabel">Password</label>
+                    </div>
+                    <input type="password" id="password" name="password" class="LoginInput" required>
+                </div>
+                
+
+                <button type="submit" class="Button_Ligth1">Log In</button>
+
+                <p class="LoginRedirect">Don’t have an account?
+                    <a href="/signup" class="Link_Pink">Sign up here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+
+    <footer class="MotivationalFooter TextColor_Dark3">
+        <p id="quote-text">🌟 Stay sweet, keep going. 🍬</p>
+        <p>✦ Candy Games || contact@abcia2.com ✦</p>
+    </footer>
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
