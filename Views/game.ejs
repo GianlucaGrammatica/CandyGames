@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/home.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="/game.css">
+   
+    <link rel="icon" size="512x512" href="/Assets/GamesImages/Icons/<%= game.id %>.png">
+    <title><%= game.titolo %> - Candy Games</title>
+=======
     <link rel="shortcut icon" href="/Assets/Icon.ico" type="image/x-icon">
     <link rel="icon" size="512x512" href="/Assets/Icon.png">
     <title>Candy Games</title>
+>>>>>>> fa38d06754296395001a6cc14cb6994ccccdde7e
 </head>
 
 <body>
@@ -33,6 +40,44 @@
     </nav>
 
     <div class="BodyCenteredContent">
+<<<<<<< HEAD
+        <div class="CenteredSection">
+            <div class="GameInfosTop">
+                <img class="FeaturedBannerImg BannerImg" src="/Assets/GamesImages/Banners/<%= game.id %>.png"
+                    alt="Featured Image">
+
+                    <div class="GameInfosTexts">
+                        <h2>
+                            <%= game.titolo %>
+                        </h2>
+                        <h3>
+                            <%= game.short_desc %>
+                        </h3>
+
+                        <div class="FeaturedGameInfosGeneraAndRating">
+                            <!-- Icona e nome del genere -->
+                            <div class="Genre">
+                                <img class="GenreIcon" src="/Assets/GeneraIcons/<%= game.genere %>.png"
+                                    alt="<%= game.genere %> Icon">
+                                <span class="GenreText">
+                                    <%= game.genere %>
+                                </span>
+                            </div>
+
+                            <!-- Rating con stella -->
+                            <div class="Rating">
+                                <img class="RatingIcon" src="/Assets/StarFull.png" alt="Rating Star">
+                                <span class="RatingText">
+                                    <%= game.rating %> / 5.0
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+
+        </div>
+=======
       <div class="Section">
         <h2>
           <%= game.titolo %>
@@ -60,6 +105,7 @@
           </div>
       </div>
       </div>          
+>>>>>>> fa38d06754296395001a6cc14cb6994ccccdde7e
     </div>
 
 

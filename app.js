@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const ejs = require('ejs');
 
-const portNumber = 3000;
+const portNumber = 2000;
 const ipAddress = '127.0.0.1';
 
 function getAbsoluteUrl(uri) {
