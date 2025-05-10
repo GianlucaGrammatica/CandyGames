@@ -24,3 +24,72 @@
 .GameInfosTexts h3 {
     font-size: 1.5em;
 }
+
+.GameDescAndReviews {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.SectionHalf {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.SectionHalf h1 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.SectionHalf p {
+    font-size: 1em;
+}
+
+@media (max-width: 749px) {
+    .GameInfosTop {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+    }
+    
+    .BannerImg {
+        margin-right: 0;
+    }
+
+    .GameInfosTexts {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .GameDescAndReviews {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-top: 30px;
+        align-items: center;
+    }
+
+    .SectionHalf {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin-bottom: 30px;
+    }
+    
+    .SectionHalf h1 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    
+    .SectionHalf p {
+        font-size: 1.1em;
+    }
+}
